@@ -1,6 +1,9 @@
 import { Router } from 'express'
+import meetup from './meetup'
 
 const router = new Router()
+
+router.use('/meetups', meetup)
 
 /**
  * @apiDefine master Master access only
