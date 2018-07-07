@@ -1,5 +1,5 @@
 {
-  "name": "horchata-meetup-server",
+  "name": "horchata-meetup-api",
   "version": "0.0.0",
   "main": "src",
   "private": true,
