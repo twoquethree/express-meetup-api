@@ -1,7 +1,7 @@
-import { Router } from 'express'
-import { create } from './controller'
+import { Router } from "express";
+import { token } from "./controller";
 
-const router = new Router()
+const router = new Router();
 
 /**
  * @api {post} /meetups Create meetup
@@ -11,7 +11,6 @@ const router = new Router()
  * @apiError {Object} 400 Some parameters may contain invalid values.
  * @apiError 404 Meetup not found.
  */
-router.post('/',
-  create)
+router.post("/api/token", token);
 
-export default router
+export default router;
