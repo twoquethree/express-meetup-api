@@ -6,10 +6,10 @@ export const token = async (req, res, next) => {
     method: "POST",
     uri: "https://secure.meetup.com/oauth2/access",
     form: {
-      client_id: process.env.CLIENT_ID,
-      client_secret: process.env.CLIENT_SECRET,
+      client_id: process.env.MEETUP_CLIENT_ID,
+      client_secret: process.env.MEETUP_CLIENT_SECRET,
       grant_type: "authorization_code",
-      redirect_uri: "http://localhost:8081/callback",
+      redirect_uri: process.env.FRONTEND_CALLBACK_URI,
       code
     },
     headers: {

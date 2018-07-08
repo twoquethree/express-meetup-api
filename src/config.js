@@ -23,34 +23,16 @@ const config = {
   all: {
     env: process.env.NODE_ENV || "development",
     root: path.join(__dirname, ".."),
-    port: process.env.PORT || 8080,
-    ip: process.env.IP || "127.0.0.1",
+    port: process.env.API_PORT || 8081,
+    ip: process.env.API_IP || "127.0.0.1",
     apiRoot: process.env.API_ROOT || "",
-    masterKey: requireProcessEnv("MASTER_KEY"),
-    mongo: {
-      options: {
-        db: {
-          safe: true
-        }
-      }
-    }
+    masterKey: requireProcessEnv("API_MASTER_KEY")
   },
   test: {},
-  development: {
-    mongo: {
-      uri: "mongodb://localhost/horchata-meetup-server-dev",
-      options: {
-        debug: true
-      }
-    }
-  },
+  development: {},
   production: {
-    ip: process.env.IP || undefined,
-    port: process.env.PORT || 8080,
-    mongo: {
-      uri:
-        process.env.MONGODB_URI || "mongodb://localhost/horchata-meetup-server"
-    }
+    ip: process.env.API_IP || undefined,
+    port: process.env.API_PORT || 8081
   }
 };
 
